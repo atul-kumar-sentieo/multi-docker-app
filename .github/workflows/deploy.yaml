@@ -10,14 +10,13 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
-      - run: docker build -t atul-kumar/react-test -f ./client/Dockerfile.dev .
-      
-      - run: docker build -t atul-kumar/multi-client ./client
-      - run: docker build -t atul-kumar/multi-server ./server
-      - run: docker build -t atul-kumar/multi-worker ./worker
-      - run: docker build -t atul-kumar/multi-nginx ./nginx
+    
+      - run: docker build -t iatul/multi-client ./client
+      - run: docker build -t iatul/multi-server ./server
+      - run: docker build -t iatul/multi-worker ./worker
+      - run: docker build -t iatul/multi-nginx ./nginx
 
-      - run: docker push atul-kumar/multi-client
-      - run: docker push atul-kumar/multi-server
-      - run: docker push atul-kumar/multi-worker
-      - run: docker push atul-kumar/multi-nginx
+      - run: docker push iatul/multi-client
+      - run: docker push iatul/multi-server
+      - run: docker push iatul/multi-worker
+      - run: docker push iatul/multi-nginx
